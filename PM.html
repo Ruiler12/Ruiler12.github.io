@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matric even more champer</title>
+	<link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+<ul>
+		<li><a href="index.html">Introducere Matrici</a></li>
+		<li><a class="active" href="PM.html">Parcurgerea Matricilor</a></li>
+		<li><a href="MP.html">Matrici Patratice</a></li>
+		<li><a href="SP.html">Sume Partiale</a></li>
+		<li><a href="PB.html">Probleme</a></li>
+		
+	</ul> 
+	<h1>Parcurgerea Matricilor</h1>
+	<h2>Indexarea Matricilor</h2>
+	<div class="box" style="text-indent:50px;"><p>Tablourile bidimensionale sunt indexate de a 0 (liniile sunt indexate de la 0 la n-1 și coloanele de la 0 la m-1).</p>
+	<p>De exemplu, pentru o matrice cu 100 de linii și 100 de coloane indexată de la 0 declararea va fi:</p>
+	<pre>
+	int A[100][100], n , m;
+	</pre></div>
+	
+	<h2>Citirea Matricei</h2>
+	<div class="box"><p>De regulă, elementele matricei se dau în ordine: de sus în jos și de la stânga la dreapta. Citirea presupune nu doar citirea elementelor matricei, dar și citirea dimensiunilor n și m:</p>
+	<pre>
+	cin >> n >> m;
+	for(int i = 0 ; i < n ; i ++)
+	 for(int j = 0 ; j < m ; j ++)
+	cin >> A[i][j];
+	</pre></div>
+	
+	
+	
+	<h2>Parcurgerea Matricei</h2>
+	<div class="box"><p>Parcurgerea presupune accesarea elementelor curente ale matricei, într-o anumită ordine – de regulă aceasta se face pe linii, de sus în jos și de la stânga la dreapta:</p>
+	<pre>
+	int n, m, A[100][100];
+	for(int i = 0 ; i < n ; i ++)
+	{
+	 // linia i
+	   for(int j = 0 ; j < m ; j ++)
+	         // A[i][j]
+	}
+	</pre></div>
+	
+	<h2>Parcurgerea unei linii</h2>
+	<div class="box"><p>Toate elementele de pe o anumită linie au același indice de linie și diferă prin indicele de coloană. Pentru a parcurge o anumită linie k, vom parcurge indici de coloană:</p>
+	<pre>
+	for(int j = 0 ; j < m ; j ++)
+	{
+		// A[k][j]
+	}
+	</pre>
+	</div>
+	
+	<h2>Parcurgerea unei coloane</h2>
+	<div class="box"><p>Toate elementele de pe o anumită coloană au același indice de coloană și diferă prin indicele de linie. Pentru a parcurge o anumită coloană k, vom parcurge indici de linie:</p>
+	<pre>
+	for(int i = 0 ; i < n ; i ++)
+	{
+		// A[i][k]
+	}
+	</pre>
+	</div>
+	
+	<h2>Afisarea unei matrici</h2>
+	<div class="box"><p>Pentru a obține aspectul specific tabloului bidimensional, după afișarea elementelor de fiecare linie vom trece la linia următoare a ecranului. Elementele fiecărei linii sunt de regulă separate printr-un spațiu:</p>
+	<pre>
+	for(int i = 0 ; i < n ; i ++)
+	{
+		for(int j = 0 ; j < m ; j ++)
+			cout << A[i][j] << " ";
+		cout << "\n";
+	}
+	</pre>
+	</div>
+
+</body>
+</html>

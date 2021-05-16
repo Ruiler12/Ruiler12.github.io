@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The most poggers of matrici</title>
+	<link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+	<ul>
+		<li><a href="index.html">Introducere Matrici</a></li>
+		<li><a href="PM.html">Parcurgerea Matricilor</a></li>
+		<li><a class="active" href="MP.html">Matrici Patratice</a></li>
+		<li><a href="SP.html">Sume Partiale</a></li>
+		<li><a href="PB.html">Probleme</a></li>
+	</ul> 
+	
+	<h1>Definitie</h2>
+	<p>Un tablou bidimensional este tablou pătratic sau matrice pătratică dacă numărul de linii este egal cu numărul de coloane. În această situație folosim pentru ambele dimensiuni o singură variabilă, de regulă n:
+int n, A[100][100];</p>
+	<img src="matrice-patratica-01.png" alt="matrice" class="center">
+	<p>Într-o matrice pătratică se disting o categorie specială de elemente, diagonalele. Un element al matricei aparține sau nu diagonalelor sau zonelor delimitate de acestea dacă respectă anumite reguli, în care intervin indicii elementului, nu valoarea elementului. În cele ce urmează, pentru un element oarecare al matricei vom nota cu i indicele de linie și cu j indicele de coloană.</p>
+	
+	<p>&nbsp;</p>
+	
+	<h1>Diagonala Principala</h1>
+	<img src="matrice-patratica-02.png" alt="matrice" class="center">
+	<p>Diagonala principala este reprezentata de elementele cu fundalul verde. Elementele de pe diagonala principala au indexarea de forma: A[0][0], A[1][1] ... A[n][n], de unde se observa faptul ca i=j (indicele de linie este in totdeauna egal cu cel de coloana)</p>
+	<p>&nbsp;</p>
+	<p>Parcurgerea diagonalei principale se realizeaza astfel:</p>
+	<p>&nbsp;</p>
+	<p style="text-indent: 150px">for(int i = 0 ; i < n ; i ++)</p>
+	<p style="text-indent: 150px">{</p>
+	<p style="text-indent: 200px">//A[i][i]</p>
+	<p style="text-indent: 150px">}</p>
+	
+	<h1>Diagonala Secundara</h1>
+	<img src="matrice-patratica-03.png" alt="matrice" class="center">
+	<p>Diagonala secundara este reprezentata de elementele cu fundalul rosu. Elementele de pe diagonala principala au indexarea de forma: A[4][0], A[3][1], A[2][2], A[3][1], A[4][0], de unde se observa faptul ca suma indicilor de pozitie (i, j) este egala cu dimensiunea matricei minus 1, mai precis i + j = n - 1, n fiind dimensiunea matricei.</p>
+	<p>&nbsp;</p>
+	<p>Parcurgerea elementelor de pe diagonala secundară:</p>
+	<p>&nbsp;</p>
+	<p style="text-indent: 150px">for(int i = 0 ; i < n ; i ++)</p>
+	<p style="text-indent: 150px">{</p>
+	<p style="text-indent: 200px">//A[i][n-1-i]</p>
+	<p style="text-indent: 150px">}</p>
+	<p>&nbsp;</p>
+	<p><strong>Observație</strong>: Dacă n este impar, cele două diagonale au un element comun. Dacă n este par, cele două diagonale nu au elemente comune.</p>
+	<p>&nbsp;</p>
+	<div class="row">
+	<img src="matrice-patratica-04.png" alt="matrice">
+	<img src="matrice-patratica-05.png" alt="matrice">
+	</div>
+	
+	
+	<h1>Elementele delimitate de diagonala principala</h1>
+	<img src="matrice-patratica-06.png" alt="matrice" class="center">
+	<p>Elementele delimitate de diagonala principala sunt marcate in imagine cu culoarea albastru si verde deschis.</p>
+	<p>&nbsp;</p>
+	<p>Elementele de sub diagonala principala sunt marcate cu culoarea albastru. In cazul lor, indicele de linie este obligatoriu mai mic decat cel de coloana ( i < j)</p>
+	<p>&nbsp;</p>
+	<p>Elementele de deasupra diagonalei principale sunt marcate cu culoarea verde deschis. In cazul lor, indicele de linie este mai mare decat indicele de coloana ( i > j)</p>
+	
+	<h1>Elementele delimitate de diagonala secundara</h1>
+	<img src="matrice-patratica-07.png" alt="matrice" class="center">
+	<p>Elementele de sub diagonala secundara sunt marcate cu albastru. In cazul lor, suma indicilor de pozitie este mai mare strict decat numarul total de linii (sau coloane) minus 1. Mai precis, i + j > n - 1</p>
+	<p>&nbsp;</p>
+	<p>Elementele de deasupra diagonalei sunt marcate cu roz. In cazul lor, suma indicilor de pozitie este mai mica strict decat numarul total de linii (sau coloane) minus 1. Mai precis, i + j < n-1</p>
+	
+	<h1>Zone delimitate de diagonale</h1>
+	<p>Cele două diagonale delimitează în matrice patru zone: Nord, Est, Sud și Vest. Condițiile verificate de indicii elementelor din aceste zone sunt prezentate mai jos:</p>
+	<img src="matrice-patratica-08.png" alt="matrice" class="center">
+	
+	
+</body>
+</html>

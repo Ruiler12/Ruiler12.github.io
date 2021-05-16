@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Two matrici kissing</title>
+	<link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+	<ul>
+		<li><a href="index.html">Introducere Matrici</a></li>
+		<li><a href="PM.html">Parcurgerea Matricilor</a></li>
+		<li><a href="MP.html">Matrici Patratice</a></li>
+		<li><a class="active" href="SP.html">Sume Partiale</a></li>
+		<li><a href="PB.html">Probleme</a></li>
+	</ul> 
+	
+	<h1>Sume Partiale in matrice</h1>
+	<div class="box"><p>Considerăm un tabloul cu elemente numerice. În unele probleme se cere să determinăm rapid suma elementelor din anumite secvențe date. Desigur, o soluție este parcurgerea tuturor elementelor din secvență și determinarea sumei, dar această operație are complexitatea O(n), iar dacă numărul de sume care trebuie calculate este mare soluția poate fi inacceptabilă.</p>
+	<p>&nbsp;</p>
+	<p>În asemenea situații putem folosi sumele parțiale.</p></div>
+	<img src="sume-partiale-1.png" alt="matrice" class="center">
+	<div class="div2">
+		<p>Pentru matricea de mai sus, să calculăm suma elementelor din submatricea cu colțul stânga-sus la coordonatele (2,3) și colțul dreapta-jos la coordonatele (3,5). La fel ca în cazul vectorilor, considerăm, pentru simplitate, că liniile și coloanele matricei sunt indexate de la 1.</p>
+		<p>&nbsp;</p>
+		<p>Parcurgerea element cu element a submatricei are complexitate O(n⋅m). Pentru o complexitate constantă considerăm matricea S[][] a sumelor parțiale, astfel:</p>
+		<p>&nbsp;</p>
+		<p>S[i][j] – suma elementelor din submatricea cu colțul stânga-sus la coordonatele (1,1) și colțul dreapta-jos la coordonatele (i,j). Elementele de pe linia 0 și coloana 0 vor avea valoarea 0:</p>
+		<img src="sume-partiale-2.png" alt="matrice" class="center"></div>
+	<div class="div3">
+		<p>Odată construită această matrice, pentru determinarea sumei elementelor din submatricea cu colțul stânga-sus la coordonatele (is,js) și colțul dreapta-jos la coordonatele (ij,jj) vom folosi următoarea formulă:</p>
+		<p>&nbsp;</p>
+		<p>Suma(is,js,ij,jj) = S[ij][jj] - S[is-1][jj] - S[ij][js-1] + S[is-1][js-1]</p>
+		<p>&nbsp</p>
+		<div class="row">
+			<img src="sume-partiale-3.png" alt="matrice">
+			<img src="sume-partiale-4.png" alt="matrice">
+		</div>
+		<p>&nbsp</p>
+		<p>Matricea S[][] se construiește similar cu modul în care se determină suma din submatrice:</p>
+		<p>&nbsp</p>
+		<p>S[i][j]={0S[i−1][j]+S[i][j−1]–S[i−1][j−1]+A[i][j]dacă i=0 sau j=0,dacă i>0 și j>0.</p>
+		<p><strong>Observație</strong>: Este posibil ca suma elementelor din matricea dată să depășească limita maximă a tipului de date folosit (ex. int), ceea ce duce la overflow. În acest caz, matricea S[][] trebuie declarată de un tip mai larg (ex. long long int).</p>
+		<p>Secventa CPP:</p>
+		<p>int n,m, A[1001][1001], S[1001][1001];</p>
+		<p>//citire n,m,A[][]</p>
+		<p>&nbsp;</p>
+		<p style="text-indent: 150px">for(int i = 0 ; i <= n ; i ++)</p>
+		<p style="text-indent: 200px">S[i][0] = 0;</p>
+		<p style="text-indent: 150px">for(int j = 0 ; j <= m ; j ++)</p>
+		<p style="text-indent: 200px">S[0][j] = 0;</p>
+		<p>&nbsp;</p>
+		<p style="text-indent: 150px">for(int i = 1 ; i <= n ; i ++)</p>
+		<p style="text-indent: 200px">for(int j = 1 ; j <= m ; j ++)</p>
+		<p style="text-indent: 250px">S[i][j] = S[i-1][j] + S[i][j-1] - S[i-1][j-1] + A[i][j];</p>
+		<p>&nbsp;</p>
+		<p>int is,js; // coltul stanga sus</p>
+		<p>int ij,jj; // coltul dreapta jos</p>
+		<p>//citire is,js, ij,jj;</p>
+		<p>&nbsp;</p>
+		<p>cout << S[ij][jj] - S[is-1][jj] - S[ij][js-1] + S[is-1][js-1];</p>
+</body>
+</html>

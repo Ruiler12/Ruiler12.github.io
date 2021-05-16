@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="mystyle.css">
+	<title>Matrici Poggers</title>
+
+</head>
+<body>
+	<ul>
+		<li><a class="active" href="index.html">Introducere Matrici</a></li>
+		<li><a href="PM.html">Parcurgerea Matricilor</a></li>
+		<li><a href="MP.html">Matrici Patratice</a></li>
+		<li><a href="SP.html">Sume Partiale</a></li>
+		<li><a href="PB.html">Probleme</a></li>
+	</ul> 
+	<h1>Ce este o matrice?</h1>
+
+	<div class="box"><p>O matrice este o forma de organizare tabelara a unor elemente care au acelsi tip, componentele acesteia putand fi identificate printr-un nume urmat (intre paranteze drepte) de pozitia acestora in cadrul vectorului. Identificarea pozitiei in cadrul matricii se realizeaza prin specificarea liniei si coloanei pe care se afla elementul matricii.
+
+Declaratia unei matrici se realizeaza prin specificarea tipului c
+</p></div>
+
+
+<img src="matrice.png" alt="matrice" class="center">
+
+	<p>&nbsp;</p>
+
+	<h1>Dimensiunile unei matrici</h1>
+	<div class="box" class="div2"><p>Tablourile bidimensionale au două categorii de dimensiuni:</p>
+				<p>Dimensiuni logice si fizice. dimensiunea fizica este numărul maxim de linii, respectiv coloane pe care le poate avea tabloul; de regula se precizează în enunțul problemei iar dimensiunea logica este umărul de linii linii și de coloane pe care le are matricea la un moment dat, pe parcursul execuției programului. Nu pot să depășească dimensiunile fizice.</p>
+				<p>Datorită existenței acestor dimensiuni logice, într-un program C/C++ care folosește tablouri bidimensionale, pe lângă variabila care reprezintă tabloul propriu-zis este necesară prezența a încă două variabile, de regulă notate cu n și m, care reprezintă numărul curent de linii, respectiv coloane ale tabloului.</p>
+				</div>
+	
+	<h1 class="title2">Declararea unei matrici</h1>
+	<div class="div2">
+		<p>Declararea tablourilor bidimensionale (matrice) face în C/C++ similar cu a tablourilor unidimensionale, dar trebuie precizate două dimensiuni fizice, maximale: numărul maxim de linii și numărul maxim de coloane ale matricei:</p>
+		<p>&nbsp;</p> 
+		<p>tipDeBază denumire[NumarLinii][NumarColoane];</p>
+		<p>de exemplu:</p>
+		<p>int A[5][10];</p>
+		<p>&nbsp;</p> 
+		<img src="matrice-01.png" alt="matrice" class="center">
+		<p>&nbsp;</p>
+		<p>Matricea are:</p>
+		<p>&nbsp;</p>
+		<p>5 • 10 = 50 de elemente;</p>
+		<p>5 linii, indexate (numerotate) de la 0 la 4 – mai jos sunt evidențiate liniile cu indici 1 și 3;</p>
+		<p>10 coloane, indexate de la 0 la 9 – mai jos sunt evidențiate coloanele cu indici 0, 4 și 9;</p>
+		<p>Referirea elementelor se face prin intermediul operatorului C++ de indexare []
+			trebuie precizați doi indici – cel de linie și cel de coloană. Astfel, A[2][4] reprezintă elementul matricei aflat pe linia 2 și pe coloana 4 – la intersecția dintre linia 2 și coloana 4. Astfel primul indice al unui element este cel de linie, iar al doilea indice este cel de coloană.</p>
+		<img src="matrice-03.png" alt="matrice" class="center" id="img3">
+	</div>
+	
+	
+				
+</body>
+</html>

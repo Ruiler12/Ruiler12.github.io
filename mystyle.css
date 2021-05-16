@@ -1,0 +1,123 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #2e6acf;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
+}
+
+body {
+  background-color: white;
+  padding-bottom: 50px;
+}
+
+li {
+	float: left;
+}
+
+li a{ 
+	display: block;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 20px;
+	font-size: 25px;
+}
+
+li a:hover {
+	background-color: lightblue;
+	color: black;
+}
+
+.active{
+	background-color: #000080;
+	color: white;
+}
+
+.box {
+	border: 10px;
+	border-style: solid;
+	border-color: #2e6acf;
+	padding: 10px;
+	width: 1000px;
+	margin: 20px;
+	text-indent: 100px;
+	font-size: 20px;
+	margin: auto;
+}
+
+
+p {
+	margin: 10px;
+	text-align: justify;
+	font-size: 20px;
+	text-indent: 100px;
+	margin: auto;
+	width: 1000px;
+}
+
+pre {
+	text-indent: 0px;
+	font-size: 20px;
+	width: 1000px;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+
+h3{
+	text-indent: 100px;
+}
+
+.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 20px;
+	left: -30px;
+}
+
+.right {
+	display: block;
+	float: right;
+	position: relative;
+	top: -160px;
+	
+}
+
+.div2 {
+	position: relative;
+	top: 50px;
+}
+
+.div3 {
+	position: relative;
+	top: 100px;
+}
+
+.title2 {
+	position: relative;
+	top: 50px;
+}
+
+
+.row{
+	display: flex;
+	justify-content:center;
+}
+
+#img3 {
+	position: relative;
+	top: 50px;
+}
+
